@@ -3,5 +3,5 @@ tensorflow
 keras
 numpy
 pandas
-sklearn
+scikit-learn
 os
