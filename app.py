@@ -38,7 +38,7 @@ def predict(image, model):
 def main():
     st.title("Covid-19 detection Using Deep Learning")
 
-    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader("Choose an image of chest x-ray", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
         # Display the uploaded image
