@@ -58,48 +58,7 @@ model.compile(optimizer='adam',
 # Train the model
 model.fit(train_generator, epochs=10, validation_data=validation_generator,batch_size=50)
 
-# Evaluate the model
-# accuracy = model.evaluate(validation_generator)[1]
-# print(f'Validation Accuracy: {accuracy}')
 
-# Make predictions
-# predictions = model.predict(test_data)  # Provide your test data for predictions
-
-# You can further customize the model architecture, hyperparameters, and evaluation based on your specific needs.
-
-# img_width, img_height = 224, 224
-# batch_size = 32
-# train_datagen = ImageDataGenerator(rescale=1.0/255.0)
-# test_datagen = ImageDataGenerator(rescale=1.0/255.0)
-# train_generator = train_datagen.flow_from_directory(
-#     train_data_dir,
-#     target_size=(img_width, img_height),
-#     batch_size=batch_size,
-#     class_mode='categorical',
-#     shuffle=False
-# )
-# test_generator = test_datagen.flow_from_directory(
-#     test_data_dir,
-#     target_size=(img_width, img_height),
-#     batch_size=batch_size,
-#     class_mode='categorical',
-#     shuffle=False
-# )
-
-# base_model = VGG16(weights='imagenet', include_top=False,input_shape=(img_width, img_height,3))
-# x = base_model.output
-# x = GlobalAveragePooling2D()(x)
-# x = Dense(1024, activation='relu')(x)
-# predictions = Dense(3, activation='softmax')(x)
-# model = Model(inputs=base_model.input, outputs=predictions)
-# model.compile(optimizer='Adam', loss='categorical_crossentropy', metrics=['accuracy'])
-# model.fit(
-#     train_generator,
-#     steps_per_epoch=len(train_generator),
-#     validation_data=test_generator,
-#     validation_steps=len(test_generator),
-#     epochs=15
-# )
 
 # Save the model structure and weights to a .hdf5 file
 model.save('covid_detection_model.h5')
